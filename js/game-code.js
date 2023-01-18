@@ -16,7 +16,6 @@
 				this.maxSpeed = 12;
 				
 				this.image = dragonImage;
-				this.explosionSound = createAudio("game-assets/explosion-05.wav");
 				this.dragonKilled = createAudio("game-assets/dragon-kill.mp3");
 				this.explosionImage = loadImage("game-assets/blood-splatter.png");
 				this.load();
@@ -260,8 +259,8 @@
 			constructor()
 			{
 				this.image = loadImage("game-assets/samurai.png");
-				//this.engineSound = createAudio("game-assets/japan-music.mp3");
-				//this.damageSound = createAudio("game-assets/damage-sound.mp3");
+				this.engineSound = createAudio("game-assets/japan-music.mp3");
+				this.damageSound = createAudio("game-assets/damage-sound.mp3");
 			}
 			
 			display()
