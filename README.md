@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Samurai game
 Another version of the Asteroids game idea, originally made by <a href="https://github.com/vkomianos" target="_blank">@vkomianos</a>. Developed for the <a href="https://avarts.ionio.gr/en/studies/undergraduate/courses-descriptions/ava341/" target="_blank">Interactive Multimedia course</a> at the Dept. of <a href="https://avarts.ionio.gr" target="_blank">Audio and Visual Arts</a>, Corfu, Greece.
 
@@ -32,11 +31,11 @@ The folder game-assets contains the images and sounds used in the game.
 Find the original idea here: https://github.com/vkomianos/p5-asteroids-game.git
 
 ## Play online
-You can play the game <a href="https://dimitris-thomopoulos.github.io/samurai-game/index.html" target="new">online</a>.
+You can play the game <a href="https://dimitris-thomopoulos.github.io/p5-asteroids-game/game.html" target="new">online</a>.
 
 ## Libraries used
 The game uses the [p5 javascript library] (https://p5js.org/) and the [v1.5.0] (https://github.com/processing/p5.js/releases/download/v1.5.0/p5.min.js)is included in this project.
-=======
+
 Branched from the pure-data-patches-extended branch and merged with touch-and-orientation-controls 
 
 The game can be played in PC or mobile phone/tablet and used Pure data patch.
@@ -52,4 +51,5 @@ Smartphone/tablets:
 - orientation controls (tilt your device) can also be used for spaceship movements
 
 Check the source branches (pure-data-patches-extended, touch-and-orientation-controls) for extended documentation.
->>>>>>> a43865046ae7f23db1c3e6420dc78b00daaf8406
+
+The game uses the [p5 javascript library] (https://p5js.org/) and the [v1.5.0] (https://github.com/processing/p5.js/releases/download/v1.5.0/p5.min.js) is included in this project.
