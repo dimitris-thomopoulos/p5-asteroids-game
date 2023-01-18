@@ -416,7 +416,7 @@
 				Pd.start();
 				dragonSwarm.reset();
 				dragonSwarm.addNewDragons(2);
-				samurai.startEngineSound();
+				// samurai.startEngineSound();
 				samuraiLives.reset();
 			}
 			
