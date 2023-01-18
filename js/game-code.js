@@ -281,11 +281,11 @@
 				}
 			}
 			
-			startEngineSound()
-			{
-				console.log("Start sound.");
-				Pd.send('blip',[]);
-			}
+			// startEngineSound()
+			// {
+			// 	console.log("Start sound.");
+			// 	Pd.send('blip',[]);
+			// }
 			
 			stopEngineSound()
 			{
