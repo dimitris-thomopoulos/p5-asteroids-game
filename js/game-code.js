@@ -15,15 +15,10 @@
 				this.minSpeed = 6;
 				this.maxSpeed = 12;
 				
-<<<<<<< HEAD
 				this.image = dragonImage;
 				this.explosionSound = createAudio("game-assets/explosion-05.wav");
 				this.dragonKilled = createAudio("game-assets/dragon-kill.mp3");
 				this.explosionImage = loadImage("game-assets/blood-splatter.png");
-=======
-				this.image = asteroidImage;
-				this.explosionImage = loadImage("game-assets/explosion-2.png");
->>>>>>> a43865046ae7f23db1c3e6420dc78b00daaf8406
 				this.load();
 			}
 			
@@ -55,14 +50,7 @@
 			{
 				if (!this.exploded) // each dragon can explode only once
 				{
-<<<<<<< HEAD
 					this.exploded = true;		
-=======
-					this.exploded = true;
-					this.image = this.explosionImage; // change the asteroid image with explosion
-					this.explosionSoundPD();
-					
->>>>>>> a43865046ae7f23db1c3e6420dc78b00daaf8406
 					return true; // if explode returns true player loses a life
 				}
 			}
@@ -72,14 +60,11 @@
 				if (!this.exploded) // each dragon can be killed only once
 				{
 					this.exploded = true;
-<<<<<<< HEAD
 					this.x += 25;
 					this.image = this.explosionImage; // change the dragon image with explosion
 					this.dragonKilled.play(); // kill sound
-=======
-					this.image = this.explosionImage; // change the asteroid image with explosion
-					this.explosionSoundPD();
->>>>>>> a43865046ae7f23db1c3e6420dc78b00daaf8406
+					
+					// this.explosionSoundPD();
 					
 					return true; 
 				}
@@ -93,24 +78,16 @@
 		
 		class ShurikenPack
 		{
-<<<<<<< HEAD
 			//shurikenPacks = [];
-			
-=======
-			//missilePacks = [];
+
 			loadSound = "";
->>>>>>> a43865046ae7f23db1c3e6420dc78b00daaf8406
 			
 			constructor()
 			{
 				this.x = 0;
 				this.y = 0;
-<<<<<<< HEAD
 				this.image = loadImage("game-assets/shuriken-pack-2.png");
 				this.loadSound = createAudio("game-assets/load-missiles.wav");
-=======
-				this.image = loadImage("game-assets/missile-pack-2.png");
->>>>>>> a43865046ae7f23db1c3e6420dc78b00daaf8406
 			}
 			
 			newShurikenPack(score)
@@ -145,23 +122,14 @@
 				// taken by dragon.checkForCollision() -- not very precise yet 
 				if (Math.abs(this.x - samurai.x) < 80 && this.y >= 380 && this.y <= 590)
 				{
-<<<<<<< HEAD
 					samurai.addShurikens(3);
 					this.y = 0; // shurikenpack is taken - new shurikenPack may be created
 					//console.log('Shuriken pack is collected!');
 					this.loadSound.play();
-				}
-
-				
-				
-=======
-					spaceship.addMissiles(3);
-					this.y = 0; // missilepack is taken - new missilePack may be created
-					//console.log('Missile pack is collected!');
-										
+		 
 					Pd.send('collect', []);
-				}	
->>>>>>> a43865046ae7f23db1c3e6420dc78b00daaf8406
+				}
+				
 			}
 		}
 		
@@ -291,13 +259,9 @@
 			
 			constructor()
 			{
-<<<<<<< HEAD
 				this.image = loadImage("game-assets/samurai.png");
-				this.engineSound = createAudio("game-assets/japan-music.mp3");
-				this.damageSound = createAudio("game-assets/damage-sound.mp3");
-=======
-				this.image = loadImage("game-assets/spaceship-2.png");
->>>>>>> a43865046ae7f23db1c3e6420dc78b00daaf8406
+				//this.engineSound = createAudio("game-assets/japan-music.mp3");
+				//this.damageSound = createAudio("game-assets/damage-sound.mp3");
 			}
 			
 			display()
@@ -416,31 +380,22 @@
 			dragonImage = loadImage("game-assets/dragon.png"); // load once and the pass to Dragon so that will not load each time an Dragon is created
 			samurai = new Samurai();
 			
-<<<<<<< HEAD
 			shurikenImage = loadImage("game-assets/shuriken.png");
 			shurikenPack = new ShurikenPack();
-=======
-			missileImage = loadImage("game-assets/missile-2.png");
-			missilePack = new MissilePack();
 			
 			gameSounds 
 			$.get('game-assets/pure-data-patches/game-patch-2.pd', function(patchStr) {
 				  gameSounds = Pd.loadPatch(patchStr);
 				})
->>>>>>> a43865046ae7f23db1c3e6420dc78b00daaf8406
 		}
 		
 		function setup() 
 		{
 			samuraiLives = new SamuraiLives();
 			createCanvas(1280, 591); // canvas size tied to the background-image
-<<<<<<< HEAD
 			dragonSwarm = new DragonSwarm(); // it is going to handle the dragons
-=======
-			asteroidSwarm = new AsteroidSwarm(); // it is going to handle the asteroids
 			
 			setupTouchScreenControls();
->>>>>>> a43865046ae7f23db1c3e6420dc78b00daaf8406
 		}
 		
 		function draw() 
@@ -459,31 +414,18 @@
 			
 			if (startGame && !gameOver && startOnce) // begin a new game
 			{
-<<<<<<< HEAD
+				Pd.start();
 				dragonSwarm.reset();
 				dragonSwarm.addNewDragons(2);
 				samurai.startEngineSound();
 				samuraiLives.reset();
-=======
-				Pd.start();
-				asteroidSwarm.reset();
-				asteroidSwarm.addNewAsteroids(2);
-				spaceship.startEngineSound();
-				spaceShipLives.reset();
->>>>>>> a43865046ae7f23db1c3e6420dc78b00daaf8406
-				startOnce = false;
 			}
 			
 			if (gameOver) // game over
 			{
-<<<<<<< HEAD
 				samurai.stopEngineSound();
-				samurai.shurikens = 0;
-=======
-				spaceship.stopEngineSound();
 				Pd.stop(); // put in comments if you enable audio with confirm on page load
-				spaceship.missiles = 0;
->>>>>>> a43865046ae7f23db1c3e6420dc78b00daaf8406
+				samurai.shurikens = 0;
 			}
 			
 			
@@ -524,38 +466,28 @@
 					samurai.move(1);
 				}
 				
-<<<<<<< HEAD
 				/*
 				if (keyIsDown(32)) // space is pressed
 				{
 					shurikens.push(samurai.fireShuriken());
 				}
 				*/
+								
+				//touch-and-orientation-controls
+				samurai.move(getTouchDirectionControl()); // get the touch controls - if any
+				samurai.move(getOrientationControls()); // get the orientation controls - if any
+				
+				//Pd.send('receive', [spaceship.x]);  // to try this or the following -- for future development
+				//Pd.send('receive', [parseFloat($('#spaceship.x').val())]);
 				
 				shurikenPack.newShurikenPack(dragonSwarm.dragonsPassed);
 				shurikenPack.display();
 				shurikenPack.checkForCollection(samurai);
-=======
-				//touch-and-orientation-controls
-				spaceship.move(getTouchDirectionControl()); // get the touch controls - if any
-				spaceship.move(getOrientationControls()); // get the orientation controls - if any
-
-				//Pd.send('receive', [spaceship.x]);  // to try this or the following -- for future development
-				//Pd.send('receive', [parseFloat($('#spaceship.x').val())]);
-
-				missilePack.newMissilePack(asteroidSwarm.asteroidsPassed);
-				missilePack.display();
-				missilePack.checkForCollection(spaceship);
->>>>>>> a43865046ae7f23db1c3e6420dc78b00daaf8406
 				
 				for (let i = 0; i < shurikens.length; i++)
 				{
-<<<<<<< HEAD
 					//console.log('Check shuriken['+i+']');
 					if(!shurikens[i].display())
-=======
-					if(!missiles[i].display())
->>>>>>> a43865046ae7f23db1c3e6420dc78b00daaf8406
 					{
 						//console.log('Shuriken ' + i + ' out of screen');
 						shurikens.splice(i,1);
@@ -589,21 +521,14 @@
 					paused = false;
 					
 				if (paused)
-<<<<<<< HEAD
-					samurai.stopEngineSound();
-					
-				if (!paused)
-					samurai.startEngineSound();
-=======
 				{
 					Pd.stop();
 				}
 				if (!paused)
 				{
 					Pd.start();
-					spaceship.startEngineSound();
+					samurai.startEngineSound();
 				}
->>>>>>> a43865046ae7f23db1c3e6420dc78b00daaf8406
 			}
 		}
 
