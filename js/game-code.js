@@ -16,7 +16,7 @@
 				this.maxSpeed = 12;
 				
 				this.image = dragonImage;
-				this.dragonKilled = createAudio("game-assets/dragon-kill.mp3");
+				// this.dragonKilled = createAudio("game-assets/dragon-kill.mp3");
 				this.explosionImage = loadImage("game-assets/blood-splatter.png");
 				this.load();
 			}
@@ -37,7 +37,7 @@
 			
 			display() 
 			{
-				image(this.image, this.x, this.y+= this.dragonSpeed); // each time an dragon is displyed its position is updated (dragons fall [y is increased])
+				image(this.image, this.x, this.y+= this.dragonSpeed); // each time a dragon is displyed its position is updated (dragons fall [y is increased])
 				if (this.y > 591) // dragon is dissappeared and load() is called to load again the dragon 
 				{
 					this.load();
@@ -51,6 +51,8 @@
 				{
 					this.exploded = true;		
 					return true; // if explode returns true player loses a life
+
+					// this.explosionSoundPD();
 				}
 			}
 			
@@ -61,10 +63,9 @@
 					this.exploded = true;
 					this.x += 25;
 					this.image = this.explosionImage; // change the dragon image with explosion
-					this.dragonKilled.play(); // kill sound
-					
 					// this.explosionSoundPD();
 					
+					// this.dragonKilled.play(); // kill sound
 					return true; 
 				}
 			}
@@ -86,7 +87,7 @@
 				this.x = 0;
 				this.y = 0;
 				this.image = loadImage("game-assets/shuriken-pack-2.png");
-				this.loadSound = createAudio("game-assets/load-missiles.wav");
+				// this.loadSound = createAudio("game-assets/load-missiles.wav");
 			}
 			
 			newShurikenPack(score)
@@ -97,7 +98,7 @@
 					if ( xR == 1 )
 					{
 						console.log('Create a shuriken pack');
-						this.x = Math.floor(Math.random() * 1270); // random X position
+						this.x = Math.floor(Math.random() * 1100); // random X position
 						this.y = 0;
 						image(this.image, this.x, this.y++);
 					}
@@ -124,7 +125,7 @@
 					samurai.addShurikens(3);
 					this.y = 0; // shurikenpack is taken - new shurikenPack may be created
 					//console.log('Shuriken pack is collected!');
-					this.loadSound.play();
+					// this.loadSound.play();
 		 
 					Pd.send('collect', []);
 				}
@@ -142,7 +143,7 @@
 			{
 				this.y = 420;
 				this.image = shurikenImage;
-				this.shurikenThrow = createAudio("game-assets/shuriken-throw.mp3");
+				// this.shurikenThrow = createAudio("game-assets/shuriken-throw.mp3");
 			}
 			
 			fire(samurai)
@@ -225,7 +226,7 @@
 				{
 					if (Math.abs((this.dragons[i].x + 50) - samurai.x) < 80 && this.dragons[i].y >= 380 && this.dragons[i].y <= 500)
 					{
-						samurai.damageSound.play();
+						//samurai.damageSound.play();
 						return this.dragons[i].explode();
 					}
 				}
@@ -259,8 +260,8 @@
 			constructor()
 			{
 				this.image = loadImage("game-assets/samurai.png");
-				this.engineSound = createAudio("game-assets/japan-music.mp3");
-				this.damageSound = createAudio("game-assets/damage-sound.mp3");
+				// this.engineSound = createAudio("game-assets/japan-music.mp3");
+				// this.damageSound = createAudio("game-assets/damage-sound.mp3");
 			}
 			
 			display()
@@ -281,11 +282,11 @@
 				}
 			}
 			
-			// startEngineSound()
-			// {
-			// 	console.log("Start sound.");
-			// 	Pd.send('blip',[]);
-			// }
+			startEngineSound()
+			{
+				console.log("Start sound.");
+				Pd.send('blip',[]);
+			}
 			
 			stopEngineSound()
 			{
@@ -302,7 +303,7 @@
 				{
 					let shuriken = new Shuriken();
 					shuriken.fire(this);
-					shuriken.shurikenThrow.play();
+					// shuriken.shurikenThrow.play();
 					this.shurikens--;
 					return shuriken;
 				}
@@ -418,6 +419,7 @@
 				dragonSwarm.addNewDragons(2);
 				// samurai.startEngineSound();
 				samuraiLives.reset();
+				startOnce = false;
 			}
 			
 			if (gameOver) // game over
