@@ -1,0 +1,8 @@
+main > canvas * {
+    user-select: none !important;
+}
+
+main ~ * {
+    user-select: none !important;
+    touch-action: none !important;
+}

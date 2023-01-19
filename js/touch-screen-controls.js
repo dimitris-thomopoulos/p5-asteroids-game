@@ -3,6 +3,8 @@ let controllerLeft;
 let controllerRight;
 let controllerNew;
 let controllerPause;
+let controllerShoot;
+var controllerShootPressed;
 
 let leftIsPressed;
 let rightIsPressed;
@@ -17,7 +19,8 @@ function setupTouchScreenControls()
 	controllerRight = createImg("./game-assets/arrow-right.png");
 	controllerNew = createImg("./game-assets/n-button.png");
 	controllerPause = createImg("./game-assets/p-button.png");
-	
+	controllerShoot = createImg("./game-assets/shoot-button.png");
+
 	controllerLeft.touchStarted(touchLeftPressed);
 	controllerLeft.mouseReleased(releasedTouchControls);
 	
@@ -26,15 +29,34 @@ function setupTouchScreenControls()
 	
 	controllerNew.mousePressed(newGameTouchPressed);
 	controllerPause.mousePressed(pauseGameTouchPressed);
+
+	controllerShoot.mousePressed(throwShurikenTouchPressed);
+}
+
+function throwShurikenTouchPressed()
+{
+	controllerShootPressed = true;
+	setTimeout(()=> {
+		controllerShootPressed = false;
+	}, 15);
+
+
+	// if(!controllerShootPressed) {
+	// 	controllerShootPressed = true;
+	// 	return true;
+	// } else {
+
+	// }
 }
 
 function drawTouchScreenControls()
 {
-	controllerPad.position(100,600);
-	controllerLeft.position(120,700);
-	controllerRight.position(870,700);
-	controllerNew.position(380, 700);
-	controllerPause.position(640, 700);
+	controllerPad.position(0,600);
+	controllerLeft.position(20,700);
+	controllerRight.position(770,700);
+	controllerNew.position(280, 700);
+	controllerPause.position(540, 700);
+	controllerShoot.position(1050, 700);
 }
 
 function releasedTouchControls()
