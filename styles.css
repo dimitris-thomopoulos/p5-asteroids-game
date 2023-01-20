@@ -2,7 +2,7 @@ main > canvas * {
     user-select: none !important;
 }
 
-main ~ * {
+/* main ~ * {
     user-select: none !important;
     touch-action: none !important;
-}
+} */

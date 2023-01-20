@@ -16,7 +16,6 @@
 				this.maxSpeed = 12;
 				
 				this.image = dragonImage;
-				// this.dragonKilled = createAudio("game-assets/dragon-kill.mp3");
 				this.explosionImage = loadImage("game-assets/blood-splatter.png");
 				this.load();
 			}
@@ -64,8 +63,6 @@
 					this.x += 25;
 					this.image = this.explosionImage; // change the dragon image with explosion
 					this.killSoundPD();
-					
-					// this.dragonKilled.play(); // kill sound
 					return true; 
 				}
 			}
@@ -92,7 +89,6 @@
 				this.x = 0;
 				this.y = 0;
 				this.image = loadImage("game-assets/shuriken-pack-2.png");
-				// this.loadSound = createAudio("game-assets/load-missiles.wav");
 			}
 			
 			newShurikenPack(score)
@@ -130,7 +126,6 @@
 					samurai.addShurikens(3);
 					this.y = 0; // shurikenpack is taken - new shurikenPack may be created
 					//console.log('Shuriken pack is collected!');
-					// this.loadSound.play();
 		 
 					Pd.send('collect', []);
 				}
@@ -148,7 +143,6 @@
 			{
 				this.y = 420;
 				this.image = shurikenImage;
-				// this.shurikenThrow = createAudio("game-assets/shuriken-throw.mp3");
 			}
 			
 			fire(samurai)
@@ -265,8 +259,6 @@
 			constructor()
 			{
 				this.image = loadImage("game-assets/samurai.png");
-				// this.musicSound = createAudio("game-assets/japan-music.mp3");
-				// this.damageSound = createAudio("game-assets/damage-sound.mp3");
 			}
 			
 			display()
@@ -508,15 +500,29 @@
 			}
 		}
 
-		function checkIfShootPressed() {
-			setTimeout(() => {
-				return controllerShootPressed;
-			}, 5);
+		// function checkIfShootPressed() {
+
+		// 	document.querySelector("body > img:nth-child(8)").addEventListener('click', () => {
+		// 		controllerShootPressed = true;
+		// 		return controllerShootPressed;
+		// 	});
+
+		// 	// setTimeout(() => {
+		// 	// 	return controllerShootPressed;
+		// 	// }, 5);
+		// }
+
+		function mousePressed() {
+			if(controllerShootPressed && throwShurikenTouchPressed()) {
+				let temp = samurai.fireShuriken();
+				if (temp != undefined)
+				shurikens.push(temp);
+			}
 		}
 				
 		function keyPressed()
 		{
-			if (keyIsDown(83) || checkIfShootPressed()) // space is pressed - fire a shuriken
+			if (keyIsDown(83)) // space is pressed - fire a shuriken
 			{
 				let temp = samurai.fireShuriken();
 				if (temp != undefined)

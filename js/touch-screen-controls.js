@@ -36,17 +36,7 @@ function setupTouchScreenControls()
 function throwShurikenTouchPressed()
 {
 	controllerShootPressed = true;
-	setTimeout(()=> {
-		controllerShootPressed = false;
-	}, 15);
-
-
-	// if(!controllerShootPressed) {
-	// 	controllerShootPressed = true;
-	// 	return true;
-	// } else {
-
-	// }
+	return true;
 }
 
 function drawTouchScreenControls()
@@ -69,29 +59,34 @@ function touchLeftPressed()
 {
 	leftIsPressed = true;
 	rightIsPressed = false;
+	controllerShootPressed = false;
 }
 
 function touchRightPressed()
 {
 	leftIsPressed = false;
 	rightIsPressed = true;
+	controllerShootPressed = false;
 }
 
 function getTouchDirectionControl()
 {
 	if (leftIsPressed)
 	{
+		controllerShootPressed = false;
 		return -1;
 	}
 	
 	if (rightIsPressed)
 	{
+		controllerShootPressed = false;
 		return 1;
 	}
 }
 
 function newGameTouchPressed()
 {
+	controllerShootPressed = false;
 	startGame = true;
 	startOnce = true;
 	gameOver = false;
@@ -99,14 +94,15 @@ function newGameTouchPressed()
 
 function pauseGameTouchPressed()
 {
+	controllerShootPressed = false;
 	if (startGame && !gameOver && !paused)
 					paused = true;
 				else if (startGame && !gameOver && paused)
 					paused = false;
 					
 				if (paused)
-					spaceship.stopEngineSound();
+					samurai.stopMusicSound();
 					
 				if (!paused)
-					spaceship.startEngineSound();
+					samurai.startMusicSound();
 }
