@@ -478,7 +478,7 @@
 								
 				//touch-and-orientation-controls
 				samurai.move(getTouchDirectionControl()); // get the touch controls - if any
-				samurai.move(getOrientationControls()); // get the orientation controls - if any
+				//samurai.move(getOrientationControls()); // get the orientation controls - if any
 				
 				//Pd.send('receive', [spaceship.x]);  // to try this or the following -- for future development
 				//Pd.send('receive', [parseFloat($('#spaceship.x').val())]);
