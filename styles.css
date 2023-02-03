@@ -1,3 +1,7 @@
+body * {
+    touch-action: manipulation !important;
+}
+
 main > canvas * {
     user-select: none !important;
 }
