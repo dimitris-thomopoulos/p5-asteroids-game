@@ -558,9 +558,9 @@
 		function showMessages()
 		{
 			textSize(27);
-			text("Score: " + dragonSwarm.dragonsPassed, 30, 135); // Score is shown
+			text("Score: " + dragonSwarm.dragonsPassed, 280, 80); // Score is shown
 			
-			text("Shurikens: " + samurai.shurikens, 270, 60); // Score is shown
+			text("Shurikens: " + samurai.shurikens, 280, 45); // Score is shown
 		
 			if (!startGame)
 				rect(280, 280, 700, 140); // rectangle (window) to show the message to start game
