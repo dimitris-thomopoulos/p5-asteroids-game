@@ -1,15 +1,26 @@
-Asteroid image: https://freesvg.org/asteroid-no-shading
-Spaceship's image: https://www.seekpng.com/ipng/u2q8a9i1t4y3e6u2_spaceship-cartoon-clipart-library-clipart-rocket/
-Background image: https://commons.wikimedia.org/wiki/File:Buisson_crater_and_satellite_craters_AS12-51-7557.jpg
-Spaceship's engine sound: https://freesound.org/people/EnduringAutomotive/sounds/170248/
-Explosion sound: https://freesound.org/people/derplayer/sounds/587189/
+Game Website Assets:
 
-touch-and-orientation-controls
+IMAGES:
 Controller image: https://commons.wikimedia.org/wiki/File:Video_Game_Controller_(3473)_-_The_Noun_Project.svg
 Arrow image: https://publicdomainvectors.org/en/free-clipart/Arrow-pointing-down-vector-image/9188.html
+Bullseye Shooting Target White Icon FREE PNG: https://www.citypng.com/photo/19378/bullseye-shooting-target-white-icon-free-png
+Pixel dragon 8bit art retro game asset: https://www.dreamstime.com/pixel-dragon-art-bit-objects-retro-game-assets-set-icons-vintage-computer-video-arcades-vector-illustration-image136643068
+Japanese 2d scene wallpaper pixel art - Pixel Art Journey: https://twitter.com/pixelartjourney/status/1483565636433367048
+Pixel Samurai SpriteSheet PNGs for platformer games: https://lazygame2020.itch.io/samuri-spritesheet-64x64
+Heart pixel art game asset - Dansevenstar: https://opengameart.org/content/heart-pixel-art
+Bloodsplatter - Pixel Art Maker Creator ID: 9664c4: http://pixelartmaker.com/art/daedf413619e847
 
-Missile image: https://freesvg.org/missile
+SOUNDS:
+Shuriken spin fast through air sound effect: https://www.youtube.com/watch?v=x-wGvu3DL9c
 Load missiles sound: https://freesound.org/people/magnuswaker/sounds/522165/
-Space station window image: https://www.publicdomainpictures.net/en/free-download.php?image=space-station-window&id=179879
-Space station control panel: https://commons.wikimedia.org/wiki/File:S-IB_Networks_panel.jpg
+Minecraft damage sound effect: https://www.youtube.com/watch?v=y0vbTOlq_Sg
+Counter Strike knife killing sound effect: https://www.youtube.com/watch?v=XI5qYPqkIGY
 
+
+
+BlippAR presentation Assets:
+
+Fantasia Samurai Art HD Wallpaper: https://br.pinterest.com/pin/816981188640221811/
+Play game icon - roundicons.com: https://icons-for-free.com/part+1+play+game-1320568343811665546/
+Samurai Real-time 3D model - Alex "Augure" Cadinot: https://skfb.ly/6R7MU
+Samurai katana low poly - Game ready - Dokazvo: https://skfb.ly/o8ZXr

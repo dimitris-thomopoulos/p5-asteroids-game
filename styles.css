@@ -1,0 +1,12 @@
+body * {
+    touch-action: manipulation !important;
+}
+
+main > canvas * {
+    user-select: none !important;
+}
+
+/* main ~ * {
+    user-select: none !important;
+    touch-action: none !important;
+} */
